@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEJ HOLDING LLC - Integrated Financial Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variáveis de cores e estilos */
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #0d47a1;
+            --accent-color: #ffab00;
+            --light-color: #f5f5f5;
+            --dark-color: #212121;
+            --text-color: #333;
+            --text-light: #fff;
+            --gradient-primary: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            --gradient-secondary: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            --gradient-accent: linear-gradient(135deg, #ffab00 0%, #ffd600 100%);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient-accent);
+            color: var(--dark-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Header e Navegação */
+        header {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 2rem;
+        }
+
+        .language-flag {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-left: 10px;
+        }
+
+        .language-flag:hover {
+            transform: scale(1.1);
+        }
+
+        .language-flag.active {
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        .language-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 10rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="%23f5f5f5"/></svg>');
+            background-size: 100% 100px;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary-color);
+        }
+
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        /* Services Section - Dropdown Horizontal */
+        .services {
+            background: var(--gradient-secondary);
+            color: var(--text-light);
+        }
+
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .service-header:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+
+        .service-arrow {
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .service-arrow.active {
+            transform: rotate(180deg);
+        }
+
+        .service-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .service-content.active {
+            max-height: 1000px;
+        }
+
+        .service-body {
+            padding: 1.5rem;
+            padding-top: 0;
+        }
+
+        .service-body ul {
+            margin-left: 1rem;
+        }
+
+        .service-body li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-body li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Subsidiaries Section */
+        .subsidiaries {
+            background: var(--light-color);
+        }
+
+        .subsidiaries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .subsidiary-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .subsidiary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .subsidiary-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .subsidiary-body {
+            padding: 1.5rem;
+        }
+
+        .subsidiary-body ul {
+            margin-left: 1rem;
+        }
+
+        .subsidiary-body li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .subsidiary-body li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-icon {
+            margin-right: 0.8rem;
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--gradient-primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .language-switcher {
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .service-header,
+            .subsidiary-body,
+            .service-body {
+                padding: 1.2rem;
+            }
+            
+            .service-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .language-switcher {
+                margin-left: 0.5rem;
+            }
+        }
+
+        /* Textos em diferentes idiomas */
+        .lang-pt {
+            display: block;
+        }
+
+        .lang-en {
+            display: none;
+        }
+
+        body.english .lang-pt {
+            display: none;
+        }
+
+        body.english .lang-en {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <span class="logo-icon">TEJ</span>
+                    <span>HOLDING</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="lang-pt">Início</a><a href="#home" class="lang-en">Home</a></li>
+                    <li><a href="#about" class="lang-pt">Sobre Nós</a><a href="#about" class="lang-en">About Us</a></li>
+                    <li><a href="#services" class="lang-pt">Serviços</a><a href="#services" class="lang-en">Services</a></li>
+                    <li><a href="#subsidiaries" class="lang-pt">Subsidiárias</a><a href="#subsidiaries" class="lang-en">Subsidiaries</a></li>
+                    <li><a href="#contact" class="lang-pt">Contato</a><a href="#contact" class="lang-en">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <div class="language-flag" data-lang="en">
+                        <!-- Bandeira dos EUA em Base64 -->
+                        <img src="./usa.webp" alt="English">
+                    </div>
+                    <div class="language-flag active" data-lang="pt">
+                        <!-- Bandeira do Brasil em Base64 -->
+                        <img src="./brazil.webp" alt="Português">
+                    </div>
+                </div>
+                <div class="hamburger">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>TEJ HOLDING LLC</h1>
+                <p class="lang-pt">Um ecossistema financeiro completo que oferece soluções inovadoras para pessoas e empresas em todo o mundo.</p>
+                <p class="lang-en">A complete financial ecosystem offering innovative solutions for individuals and businesses worldwide.</p>
+                <a href="#services" class="btn lang-pt">Conheça Nossos Serviços</a>
+                <a href="#services" class="btn lang-en">Discover Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title lang-pt">Sobre a TEJ HOLDING</h2>
+                    <h2 class="section-title lang-en">About TEJ HOLDING</h2>
+                    <p class="lang-pt">A TEJ HOLDING LLC é uma empresa global e diversificada que atua em múltiplos setores com foco em inovação, tecnologias avançadas, sustentabilidade e crescimento estratégico. Nossa missão é criar soluções inteligentes que conectam pessoas, empresas e comunidades, trazendo o futuro para o presente.</p>
+                    <p class="lang-pt">Com um portfólio dinâmico de negócios e investimentos, exploramos continuamente novas oportunidades em finanças digitais, blockchain, inteligência artificial e impacto social. Nosso compromisso é gerar valor sustentável para clientes, acionistas e para a sociedade como um todo.</p>
+                    <p class="lang-en">TEJ HOLDING LLC is a global and diversified company operating in multiple sectors with a focus on innovation, advanced technologies, sustainability, and strategic growth. Our mission is to create smart solutions that connect people, businesses, and communities, bringing the future to the present.</p>
+                    <p class="lang-en">With a dynamic portfolio of businesses and investments, we continuously explore new opportunities in digital finance, blockchain, artificial intelligence, and social impact. Our commitment is to generate sustainable value for clients, shareholders, and society as a whole.</p>
+                    <a href="#contact" class="btn lang-pt">Entre em Contato</a>
+                    <a href="#contact" class="btn lang-en">Contact Us</a>
+                </div>
+                <div class="about-image">
+                    <!-- Imagem ilustrativa -->
+                    <div style="width: 100%; height: 300px; background: var(--gradient-secondary); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        TEJ HOLDING LLC
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - Dropdown Horizontal -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2 class="section-title lang-pt">Nossos Serviços</h2>
+            <h2 class="section-title lang-en">Our Services</h2>
+            <div class="services-container">
+                <!-- Serviço 1 -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-title">
+                            <div class="service-icon"><i class="fas fa-university"></i></div>
+                            <div>
+                                <h3>TEJ BANK</h3>
+                                <p class="lang-pt">Banco digital multimoeda, com soluções inteligentes para finanças globais e blindagem patrimonial.</p>
+                                <p class="lang-en">Multi-currency digital bank with smart solutions for global finances and asset protection.</p>
+                            </div>
+                        </div>
+                        <div class="service-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-body">
+                            <p class="lang-pt">O TEJ Bank é a divisão de serviços bancários digitais da TEJ HOLDING, com foco em inovação e integração entre moedas tradicionais e ativos digitais. Criamos soluções financeiras inteligentes para indivíduos e empresas.</p>
+                            <p class="lang-en">TEJ Bank is the digital banking services division of TEJ HOLDING, focusing on innovation and integration between traditional currencies and digital assets. We create smart financial solutions for individuals and businesses.</p>
+                            <br>
+                            <ul>
+                                <h4 class="lang-pt">Produtos e Serviços</h4>
+                                <h4 class="lang-en">Products and Services</h4>
+                                <li class="lang-pt">Conta Digital Multimoeda (base USDT)</li>
+                                <li class="lang-en">Multi-currency Digital Account (USDT-based)</li>
+                                <li class="lang-pt">Cartão Global (Físico & Virtual)</li>
+                                <li class="lang-en">Global Card (Physical & Virtual)</li>
+                                <li class="lang-pt">Blindagem Patrimonial Inteligente</li>
+                                <li class="lang-en">Smart Asset Protection</li>
+                                <li class="lang-pt">Expansão Patrimonial Estratégica</li>
+                                <li class="lang-en">Strategic Wealth Expansion</li>
+                                <li class="lang-pt">Crédito Colateralizado em Criptoativos</li>
+                                <li class="lang-en">Crypto-backed Credit</li>
+                                <li class="lang-pt">Remessas Globais via Blockchain</li>
+                                <li class="lang-en">Global Remittances via Blockchain</li>
+                                <li class="lang-pt">Assistente Financeiro com IA</li>
+                                <li class="lang-en">AI Financial Assistant</li>
+                                <h4 class="lang-pt">Tecnologia e Segurança</h4>
+                                <h4 class="lang-en">Technology and Security</h4>
+                                <li class="lang-pt">Utilizamos blockchain e protocolos de segurança avançados, garantindo máxima proteção dos ativos e dados de nossos clientes. Transparência, inovação e solidez em um único ecossistema bancário.</li>
+                                <li class="lang-en">We use blockchain and advanced security protocols, ensuring maximum protection of our clients' assets and data. Transparency, innovation, and solidity in a single banking ecosystem.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-title">
+                            <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+                            <div>
+                                <h3>TEJ PAGUE</h3>
+                                <p class="lang-pt">Soluções de pagamento digital</p>
+                                <p class="lang-en">Digital payment solutions</p>
+                            </div>
+                        </div>
+                        <div class="service-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-body">
+                            <p class="lang-pt">TEJ Pague é o serviço que conecta brasileiros nos Estados Unidos ao pagamento de contas no Brasil de forma rápida e segura.</p>
+                            <p class="lang-en">TEJ Pague is the service that connects Brazilians in the United States to paying bills in Brazil quickly and securely.</p>
+                            <ul>
+                                <h4 class="lang-pt">Como Funciona</h4>
+                                <h4 class="lang-en">How It Works</h4>
+                                <br>
+                                <li class="lang-pt">Envie os valores em dólar para a TEJ Pague via Bank of American ou em Criptomoeda</li>
+                                <li class="lang-en">Send amounts in dollars to TEJ Pague via Bank of America or in Cryptocurrency</li>
+                                <li class="lang-pt">Realizamos a conversão para reais com câmbio seguro</li>
+                                <li class="lang-en">We convert to reais with secure exchange rates</li>
+                                <li class="lang-pt">Realizamos o pagamento de contas como água, luz, internet, boletos, faturas e muito mais.</li>
+                                <li class="lang-en">We pay bills such as water, electricity, internet, invoices, and much more.</li>
+                                <li class="lang-pt">Pagamos suas contas no Brasil de forma ágil e transparente</li>
+                                <li class="lang-en">We pay your bills in Brazil quickly and transparently</li>
+                                <li class="lang-pt">Enviamos (PIX) para seus amigos e familiares no Brasil em minutos</li>
+                                <li class="lang-en">We send (PIX) to your friends and family in Brazil in minutes</li>
+                                <h4 class="lang-pt">Diferencial</h4>
+                                <h4 class="lang-en">Advantage</h4>
+                                <li class="lang-pt">Com o TEJ Pague você tem praticidade, confiança e suporte especializado.</li>
+                                <li class="lang-en">With TEJ Pague you get convenience, trust, and specialized support.</li>
+                                <li class="lang-pt">Sua família no Brasil fica tranquila e você resolve tudo diretamente dos EUA.</li>
+                                <li class="lang-en">Your family in Brazil stays calm and you handle everything directly from the US.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-title">
+                            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <h3>UNIVERSAL CAPITAL</h3>
+                                <p class="lang-pt">Gestão de patrimônio e investimentos</p>
+                                <p class="lang-en">Wealth management and investments</p>
+                            </div>
+                        </div>
+                        <div class="service-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-body">
+                            <h4 class="lang-pt">Empresa especializada em gestão de patrimônio e consultoria financeira personalizada.</h4>
+                            <h4 class="lang-en">Company specialized in wealth management and personalized financial consulting.</h4>
+                            <ul>
+                                <li class="lang-pt">Consultoria tributária internacional</li>
+                                <li class="lang-en">International tax consulting</li>
+                                <li class="lang-pt">Estruturação de holdings no Brasil e EUA</li>
+                                <li class="lang-en">Structuring of holdings in Brazil and USA</li>
+                                <li class="lang-pt">Auditoria contábil e fiscal</li>
+                                <li class="lang-en">Accounting and tax auditing</li>
+                                <li class="lang-pt">Planejamento sucessório e empresarial</li>
+                                <li class="lang-en">Succession and business planning</li>
+                                <li class="lang-pt">Integração bancária Brasil ↔ EUA (PIX/SPB com TEJ Bank)</li>
+                                <li class="lang-en">Bank integration Brazil ↔ USA (PIX/SPB with TEJ Bank)</li>
+                                <h4 class="lang-pt">Contabilidade Empresarial Detalhada:</h4>
+                                <h4 class="lang-en">Detailed Business Accounting:</h4>
+                                <li class="lang-pt">Escrituração fiscal e societária</li>
+                                <li class="lang-en">Tax and corporate bookkeeping</li>
+                                <li class="lang-pt">Balanços e demonstrações financeiras</li>
+                                <li class="lang-en">Balance sheets and financial statements</li>
+                                <li class="lang-pt">Consultoria para empresas exportadoras/importadoras</li>
+                                <li class="lang-en">Consulting for exporting/importing companies</li>
+                                <li class="lang-pt">Abertura de empresas</li>
+                                <li class="lang-en">Company formation</li>
+                                <li class="lang-pt">Suporte fiscal e contábil</li>
+                                <li class="lang-en">Tax and accounting support</li>
+                                <h4 class="lang-pt">Cartório / Notary Services (EUA)</h4>
+                                <h4 class="lang-en">Notary Services (USA)</h4>
+                                <li class="lang-pt">Notarização de documentos</li>
+                                <li class="lang-en">Document notarization</li>
+                                <li class="lang-pt">Traduções juramentadas</li>
+                                <li class="lang-en">Sworn translations</li>
+                                <li class="lang-pt">Procurações internacionais</li>
+                                <li class="lang-en">International powers of attorney</li>
+                                <li class="lang-pt">Registro e autenticação para uso no Brasil/EUA</li>
+                                <li class="lang-en">Registration and authentication for use in Brazil/USA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="service-item">
+                    <div class="service-header">
+                        <div class="service-title">
+                            <div class="service-icon"><i class="fas fa-globe-americas"></i></div>
+                            <div>
+                                <h3>CENTRAL DO IMIGRANTE</h3>
+                                <p class="lang-pt">Hub de soluções para imigrantes</p>
+                                <p class="lang-en">Immigrant solutions hub</p>
+                            </div>
+                        </div>
+                        <div class="service-arrow"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-body">
+                            <h4 class="lang-pt">Soluções especializadas para imigrantes e suas famílias.</h4>
+                            <h4 class="lang-en">Specialized solutions for immigrants and their families.</h4>
+                
+                            <h4 class="lang-pt">Serviços de Imigração e Documentação:</h4>
+                            <h4 class="lang-en">Immigration and Documentation Services:</h4>
+                            <ul>
+                                <li class="lang-pt">Petições USCIS (I-130, I-485, I-765, I-589, I-131, I-539, I-360, etc.)</li>
+                                <li class="lang-en">USCIS Petitions (I-130, I-485, I-765, I-589, I-131, I-539, I-360, etc.)</li>
+                                <li class="lang-pt">Asilo, VAWA, Visto T, Visto U, Parole Humanitário</li>
+                                <li class="lang-en">Asylum, VAWA, T Visa, U Visa, Humanitarian Parole</li>
+                                <li class="lang-pt">Ajuste e mudança de status (B-1/B-2, F-1, J-1, Green Card, cidadania)</li>
+                                <li class="lang-en">Adjustment and change of status (B-1/B-2, F-1, J-1, Green Card, citizenship)</li>
+                                <li class="lang-pt">Defesa contra deportação</li>
+                                <li class="lang-en">Defense against deportation</li>
+                            </ul>
+                
+                            <h4 class="lang-pt">Serviços Práticos e Comunitários:</h4>
+                            <h4 class="lang-en">Practical and Community Services:</h4>
+                            <ul>
+                                <li class="lang-pt">Carteira de motorista</li>
+                                <li class="lang-en">Driver's license</li>
+                                <li class="lang-pt">Matrícula escolar</li>
+                                <li class="lang-en">School enrollment</li>
+                                <li class="lang-pt">Agendamento de consultas médicas</li>
+                                <li class="lang-en">Medical appointment scheduling</li>
+                                <li class="lang-pt">Concierge de adaptação</li>
+                                <li class="lang-en">Adaptation concierge</li>
+                                <li class="lang-pt">Agência de turismo</li>
+                                <li class="lang-en">Travel agency</li>
+                            </ul>
+                
+                            <h4 class="lang-pt">Contabilidade e Apoio Empresarial:</h4>
+                            <h4 class="lang-en">Accounting and Business Support:</h4>
+                            <ul>
+                                <li class="lang-pt">Declaração de impostos (pessoa física e jurídica)</li>
+                                <li class="lang-en">Tax declaration (individual and corporate)</li>
+                                <li class="lang-pt">Payroll (folha de pagamento)</li>
+                                <li class="lang-en">Payroll</li>
+                                <li class="lang-pt">Planejamento tributário</li>
+                                <li class="lang-en">Tax planning</li>
+                                <li class="lang-pt">Regularização fiscal junto ao IRS</li>
+                                <li class="lang-en">Tax regularization with the IRS</li>
+                                <li class="lang-pt">Relatórios contábeis e financeiros mensais</li>
+                                <li class="lang-en">Monthly accounting and financial reports</li>
+                                <li class="lang-pt">Abertura de empresas</li>
+                                <li class="lang-en">Company formation</li>
+                                <li class="lang-pt">Suporte fiscal e contábil</li>
+                                <li class="lang-en">Tax and accounting support</li>
+                            </ul>
+                
+                            <h4 class="lang-pt">Integração Comunitária:</h4>
+                            <h4 class="lang-en">Community Integration:</h4>
+                            <ul>
+                                <li class="lang-pt">Espaço gratuito no portal para empresas, igrejas e instituições (Google do Imigrante)</li>
+                                <li class="lang-en">Free space on the portal for businesses, churches, and institutions (Immigrant's Google)</li>
+                            </ul>
+                
+                            <h4 class="lang-pt">Serviços Financeiros:</h4>
+                            <h4 class="lang-en">Financial Services:</h4>
+                            <ul>
+                                <li class="lang-pt">Remessas internacionais</li>
+                                <li class="lang-en">International remittances</li>
+                                <li class="lang-pt">Abertura de contas para estrangeiros</li>
+                                <li class="lang-en">Account opening for foreigners</li>
+                                <li class="lang-pt">Câmbio e transferências</li>
+                                <li class="lang-en">Exchange and transfers</li>
+                                <li class="lang-pt">Suporte multilíngue</li>
+                                <li class="lang-en">Multilingual support</li>
+                                <li class="lang-pt">Orientação financeira para imigrantes</li>
+                                <li class="lang-en">Financial guidance for immigrants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidiaries Section -->
+    <section id="subsidiaries" class="subsidiaries section">
+        <div class="container">
+            <h2 class="section-title lang-pt">Nossas Subsidiárias & Áreas de Atuação</h2>
+            <h2 class="section-title lang-en">Our Subsidiaries & Areas of Operation</h2>
+            <div class="subsidiaries-grid">
+    
+                <!-- TEJ BANK -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3>TEJ BANK</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Banco digital multimoeda com soluções inteligentes para finanças globais e blindagem patrimonial.</p>
+                        <p class="lang-en">Multi-currency digital bank with smart solutions for global finances and asset protection.</p>
+                        <ul>
+                            <li class="lang-pt">Conta digital multimoeda (base USDT)</li>
+                            <li class="lang-en">Multi-currency digital account (USDT-based)</li>
+                            <li class="lang-pt">Cartão global físico e virtual</li>
+                            <li class="lang-en">Global physical and virtual card</li>
+                            <li class="lang-pt">Crédito colateralizado em criptoativos</li>
+                            <li class="lang-en">Crypto-backed credit</li>
+                            <li class="lang-pt">Remessas globais via blockchain</li>
+                            <li class="lang-en">Global remittances via blockchain</li>
+                            <li class="lang-pt">Blindagem e expansão patrimonial</li>
+                            <li class="lang-en">Asset protection and expansion</li>
+                            <li class="lang-pt">Assistente financeiro com IA</li>
+                            <li class="lang-en">AI financial assistant</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- TEJ PAGUE -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3>TEJ PAGUE</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Soluções de pagamento digital que conectam brasileiros nos EUA ao pagamento de contas no Brasil.</p>
+                        <p class="lang-en">Digital payment solutions connecting Brazilians in the US to bill payments in Brazil.</p>
+                        <ul>
+                            <li class="lang-pt">Envio em dólar ou criptomoeda</li>
+                            <li class="lang-en">Sending in dollars or cryptocurrency</li>
+                            <li class="lang-pt">Conversão segura para reais</li>
+                            <li class="lang-en">Secure conversion to reais</li>
+                            <li class="lang-pt">Pagamento de boletos, contas e faturas</li>
+                            <li class="lang-en">Payment of invoices, bills, and statements</li>
+                            <li class="lang-pt">Transferências imediatas via PIX</li>
+                            <li class="lang-en">Instant transfers via PIX</li>
+                            <li class="lang-pt">Suporte especializado para famílias no Brasil</li>
+                            <li class="lang-en">Specialized support for families in Brazil</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- UNIVERSAL CAPITAL -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3>UNIVERSAL CAPITAL</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Gestão de patrimônio e consultoria financeira personalizada com atuação internacional.</p>
+                        <p class="lang-en">Wealth management and personalized financial consulting with international operations.</p>
+                        <ul>
+                            <li class="lang-pt">Consultoria tributária internacional</li>
+                            <li class="lang-en">International tax consulting</li>
+                            <li class="lang-pt">Estruturação de holdings Brasil/EUA</li>
+                            <li class="lang-en">Structuring of holdings Brazil/USA</li>
+                            <li class="lang-pt">Auditoria e planejamento sucessório</li>
+                            <li class="lang-en">Auditing and succession planning</li>
+                            <li class="lang-pt">Contabilidade empresarial detalhada</li>
+                            <li class="lang-en">Detailed business accounting</li>
+                            <li class="lang-pt">Assessoria para exportadoras/importadoras</li>
+                            <li class="lang-en">Consulting for exporters/importers</li>
+                            <li class="lang-pt">Cartório / Notary Services (EUA)</li>
+                            <li class="lang-en">Notary Services (USA)</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- CENTRAL DO IMIGRANTE -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3>CENTRAL DO IMIGRANTE</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Hub de soluções para imigrantes e suas famílias, com suporte jurídico, social, contábil e financeiro.</p>
+                        <p class="lang-en">Hub of solutions for immigrants and their families, with legal, social, accounting, and financial support.</p>
+                        <ul>
+                            <li class="lang-pt">Imigração e documentação (USCIS, vistos, cidadania)</li>
+                            <li class="lang-en">Immigration and documentation (USCIS, visas, citizenship)</li>
+                            <li class="lang-pt">Serviços práticos: carteira de motorista, matrícula escolar, turismo</li>
+                            <li class="lang-en">Practical services: driver's license, school enrollment, tourism</li>
+                            <li class="lang-pt">Apoio empresarial: impostos, payroll, abertura de empresas</li>
+                            <li class="lang-en">Business support: taxes, payroll, company formation</li>
+                            <li class="lang-pt">Integração comunitária (Google do Imigrante)</li>
+                            <li class="lang-en">Community integration (Immigrant's Google)</li>
+                            <li class="lang-pt">Serviços financeiros: remessas, contas, câmbio, orientação</li>
+                            <li class="lang-en">Financial services: remittances, accounts, exchange, guidance</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- CONSULTORIA & JURÍDICO -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Consultoria & Jurídico</h3>
+                        <h3 class="lang-en">Consulting & Legal</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Assessoria completa em questões legais, contratuais e empresariais.</p>
+                        <p class="lang-en">Complete advisory on legal, contractual, and business matters.</p>
+                        <ul>
+                            <li class="lang-pt">Consultoria empresarial</li>
+                            <li class="lang-en">Business consulting</li>
+                            <li class="lang-pt">Contratos e compliance</li>
+                            <li class="lang-en">Contracts and compliance</li>
+                            <li class="lang-pt">Planejamento jurídico internacional</li>
+                            <li class="lang-en">International legal planning</li>
+                            <li class="lang-pt">Defesa e representação legal</li>
+                            <li class="lang-en">Legal defense and representation</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- SOCIAL E SUSTENTABILIDADE -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Social e Sustentabilidade</h3>
+                        <h3 class="lang-en">Social and Sustainability</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Projetos sociais e ambientais voltados ao impacto positivo e ao desenvolvimento sustentável.</p>
+                        <p class="lang-en">Social and environmental projects focused on positive impact and sustainable development.</p>
+                        <ul>
+                            <li class="lang-pt">Iniciativas educacionais e comunitárias</li>
+                            <li class="lang-en">Educational and community initiatives</li>
+                            <li class="lang-pt">Programas ambientais</li>
+                            <li class="lang-en">Environmental programs</li>
+                            <li class="lang-pt">Responsabilidade social corporativa</li>
+                            <li class="lang-en">Corporate social responsibility</li>
+                            <li class="lang-pt">Parcerias com ONGs e instituições</li>
+                            <li class="lang-en">Partnerships with NGOs and institutions</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- MERCADO DE CAPITAIS -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Mercado de Capitais</h3>
+                        <h3 class="lang-en">Capital Markets</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Atuação estratégica em investimentos e captação de recursos no mercado financeiro.</p>
+                        <p class="lang-en">Strategic operations in investments and fundraising in the financial market.</p>
+                        <ul>
+                            <li class="lang-pt">Fundos de investimento</li>
+                            <li class="lang-en">Investment funds</li>
+                            <li class="lang-pt">Captação e alocação de recursos</li>
+                            <li class="lang-en">Fundraising and resource allocation</li>
+                            <li class="lang-pt">Consultoria em mercado acionário</li>
+                            <li class="lang-en">Stock market consulting</li>
+                            <li class="lang-pt">Estruturação de operações financeiras</li>
+                            <li class="lang-en">Structuring of financial operations</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- BLOCKCHAIN & CRIPTOMOEDA -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Blockchain & Criptomoeda</h3>
+                        <h3 class="lang-en">Blockchain & Cryptocurrency</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Inovação em ativos digitais e soluções baseadas em blockchain.</p>
+                        <p class="lang-en">Innovation in digital assets and blockchain-based solutions.</p>
+                        <ul>
+                            <li class="lang-pt">Plataforma de criptoativos</li>
+                            <li class="lang-en">Cryptocurrency platform</li>
+                            <li class="lang-pt">Segurança de transações digitais</li>
+                            <li class="lang-en">Digital transaction security</li>
+                            <li class="lang-pt">Pagamentos via blockchain</li>
+                            <li class="lang-en">Payments via blockchain</li>
+                            <li class="lang-pt">Projetos DeFi e Web3</li>
+                            <li class="lang-en">DeFi and Web3 projects</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- INTELIGÊNCIA ARTIFICIAL -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Inteligência Artificial</h3>
+                        <h3 class="lang-en">Artificial Intelligence</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Aplicação de IA para automação, análise de dados e otimização de processos.</p>
+                        <p class="lang-en">Application of AI for automation, data analysis, and process optimization.</p>
+                        <ul>
+                            <li class="lang-pt">Chatbots e atendimento automatizado</li>
+                            <li class="lang-en">Chatbots and automated customer service</li>
+                            <li class="lang-pt">Análise preditiva de mercado</li>
+                            <li class="lang-en">Predictive market analysis</li>
+                            <li class="lang-pt">Automação empresarial</li>
+                            <li class="lang-en">Business automation</li>
+                            <li class="lang-pt">Modelos de machine learning</li>
+                            <li class="lang-en">Machine learning models</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- ENERGIA RENOVÁVEL -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Energia Renovável</h3>
+                        <h3 class="lang-en">Renewable Energy</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Investimentos e projetos em energia limpa e sustentável.</p>
+                        <p class="lang-en">Investments and projects in clean and sustainable energy.</p>
+                        <ul>
+                            <li class="lang-pt">Projetos solares e eólicos</li>
+                            <li class="lang-en">Solar and wind projects</li>
+                            <li class="lang-pt">Eficiência energética</li>
+                            <li class="lang-en">Energy efficiency</li>
+                            <li class="lang-pt">Iniciativas de descarbonização</li>
+                            <li class="lang-en">Decarbonization initiatives</li>
+                            <li class="lang-pt">Consultoria em sustentabilidade energética</li>
+                            <li class="lang-en">Energy sustainability consulting</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- SEGURANÇA DIGITAL -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Segurança Digital</h3>
+                        <h3 class="lang-en">Digital Security</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Soluções avançadas de cibersegurança e proteção de dados.</p>
+                        <p class="lang-en">Advanced cybersecurity and data protection solutions.</p>
+                        <ul>
+                            <li class="lang-pt">Proteção contra ataques cibernéticos</li>
+                            <li class="lang-en">Protection against cyber attacks</li>
+                            <li class="lang-pt">Segurança de dados e compliance</li>
+                            <li class="lang-en">Data security and compliance</li>
+                            <li class="lang-pt">Monitoramento em tempo real</li>
+                            <li class="lang-en">Real-time monitoring</li>
+                            <li class="lang-pt">Auditorias de segurança</li>
+                            <li class="lang-en">Security audits</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- TEJ EDUCAÇÃO -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">TEJ Educação</h3>
+                        <h3 class="lang-en">TEJ Education</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Plataforma de ensino e capacitação para desenvolvimento profissional.</p>
+                        <p class="lang-en">Teaching and training platform for professional development.</p>
+                        <ul>
+                            <li class="lang-pt">Cursos presenciais e online</li>
+                            <li class="lang-en">In-person and online courses</li>
+                            <li class="lang-pt">Capacitação corporativa</li>
+                            <li class="lang-en">Corporate training</li>
+                            <li class="lang-pt">Formação acadêmica</li>
+                            <li class="lang-en">Academic education</li>
+                            <li class="lang-pt">Programas de bolsas e incentivo</li>
+                            <li class="lang-en">Scholarship and incentive programs</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- INSTITUTO TEJ -->
+                <div class="subsidiary-card">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Instituto TEJ</h3>
+                        <h3 class="lang-en">TEJ Institute</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Instituto voltado para pesquisa, inovação e impacto social.</p>
+                        <p class="lang-en">Institute focused on research, innovation, and social impact.</p>
+                        <ul>
+                            <li class="lang-pt">Pesquisa e desenvolvimento</li>
+                            <li class="lang-en">Research and development</li>
+                            <li class="lang-pt">Projetos de inovação</li>
+                            <li class="lang-en">Innovation projects</li>
+                            <li class="lang-pt">Impacto social e comunitário</li>
+                            <li class="lang-en">Social and community impact</li>
+                            <li class="lang-pt">Parcerias com universidades</li>
+                            <li class="lang-en">Partnerships with universities</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- NASDAQ -->
+                <div class="subsidiary-card nasdaq">
+                    <div class="subsidiary-header">
+                        <h3>NASDAQ</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Estamos em evolução para abrir capital e listar nossas ações na bolsa de valores americana (NASDAQ), consolidando nossa presença global.</p>
+                        <p class="lang-en">We are evolving to go public and list our shares on the American stock exchange (NASDAQ), consolidating our global presence.</p>
+                        <ul>
+                            <li class="lang-pt">Preparação para IPO</li>
+                            <li class="lang-en">IPO preparation</li>
+                            <li class="lang-pt">Expansão internacional</li>
+                            <li class="lang-en">International expansion</li>
+                            <li class="lang-pt">Governança corporativa sólida</li>
+                            <li class="lang-en">Solid corporate governance</li>
+                            <li class="lang-pt">Oportunidades de investimento global</li>
+                            <li class="lang-en">Global investment opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsidiary-card parceiros">
+                    <div class="subsidiary-header">
+                        <h3 class="lang-pt">Seja Nosso Parceiro</h3>
+                        <h3 class="lang-en">Become Our Partner</h3>
+                    </div>
+                    <div class="subsidiary-body">
+                        <p class="lang-pt">Convidamos empresas e profissionais a somarem forças conosco, criando oportunidades de crescimento mútuo e expansão global.</p>
+                        <p class="lang-en">We invite companies and professionals to join forces with us, creating opportunities for mutual growth and global expansion.</p>
+                        <ul>
+                            <li class="lang-pt">Parcerias estratégicas internacionais</li>
+                            <li class="lang-en">International strategic partnerships</li>
+                            <li class="lang-pt">Rede de negócios colaborativa</li>
+                            <li class="lang-en">Collaborative business network</li>
+                            <li class="lang-pt">Inovação e desenvolvimento conjunto</li>
+                            <li class="lang-en">Innovation and joint development</li>
+                            <li class="lang-pt">Benefícios exclusivos para parceiros</li>
+                            <li class="lang-en">Exclusive benefits for partners</li>
+                        </ul>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+          <h2 class="section-title lang-pt">Entre em Contato</h2>
+          <h2 class="section-title lang-en">Contact Us</h2>
+          <div class="contact-content">
+            <div class="contact-info">
+              <h3 class="lang-pt">Fale Conosco</h3>
+              <h3 class="lang-en">Get in Touch</h3>
+              <p>
+                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                <a href="mailto:support@tejholding.com">support@tejholding.com</a>
+              </p>
+              
+              <p>
+                <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                <a href="https://wa.me/17862553181">+1 (786) 255-3181</a>
+              </p>
+              
+              <p>
+                <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                <a href="https://maps.google.com/?q=16192+Coastal+Highway,+Lewes,+DE+19958,+USA" target="_blank">
+                  16192 Coastal Highway, Lewes, DE 19958, USA
+                </a>
+              </p>
+              
+              <div class="social-links" style="margin-top: 2rem;">
+                <a href="mailto:support@tejholding.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                  
+                  <a href="https://wa.me/17862553181" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                  
+                  <a href="https://play.google.com/store/apps/details?id=com.tejbank.tej" target="_blank" class="social-link">
+                    <i class="fab fa-google-play"></i>
+                  </a>
+
+                  <a href="https://play.google.com/store/apps/details?id=com.tejbank.tej" target="_blank" class="social-link">
+                    <i class="fab fa-apple"></i>
+                  </a>
+                  
+              </div>
+            </div>
+      
+            <!-- FORMULÁRIO -->
+            <div class="contact-form">
+              <form id="contactForm" action="https://formsubmit.co/support@tejholding.com" method="POST">
+                <div class="form-group">
+                  <label for="name" class="lang-pt">Nome</label>
+                  <label for="name" class="lang-en">Name</label>
+                  <input type="text" id="name" name="nome" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="lang-pt">E-mail</label>
+                  <label for="email" class="lang-en">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="subject" class="lang-pt">Assunto</label>
+                  <label for="subject" class="lang-en">Subject</label>
+                  <select id="subject" name="assunto" class="form-control" required>
+                    <option value="">-- <span class="lang-pt">Escolha</span><span class="lang-en">Choose</span> --</option>
+                    <option>TEJ BANK</option>
+                    <option>TEJ PAGUE</option>
+                    <option>UNIVERSAL CAPITAL</option>
+                    <option>CENTRAL DO IMIGRANTE</option>
+                    <option class="lang-pt">CONSULTORIA & JURÍDICO</option>
+                    <option class="lang-en">CONSULTING & LEGAL</option>
+                    <option class="lang-pt">SOCIAL E SUSTENTABILIDADE</option>
+                    <option class="lang-en">SOCIAL AND SUSTAINABILITY</option>
+                    <option class="lang-pt">MERCADO DE CAPITAIS</option>
+                    <option class="lang-en">CAPITAL MARKETS</option>
+                    <option class="lang-pt">BLOCKCHAIN & CRIPTOMOEDA</option>
+                    <option class="lang-en">BLOCKCHAIN & CRYPTOCURRENCY</option>
+                    <option class="lang-pt">INTELIGÊNCIA ARTIFICIAL</option>
+                    <option class="lang-en">ARTIFICIAL INTELLIGENCE</option>
+                    <option class="lang-pt">ENERGIA RENOVÁVEL</option>
+                    <option class="lang-en">RENEWABLE ENERGY</option>
+                    <option class="lang-pt">SEGURANÇA DIGITAL</option>
+                    <option class="lang-en">DIGITAL SECURITY</option>
+                    <option class="lang-pt">TEJ EDUCAÇÃO</option>
+                    <option class="lang-en">TEJ EDUCATION</option>
+                    <option class="lang-pt">INSTITUTO TEJ</option>
+                    <option class="lang-en">TEJ INSTITUTE</option>
+                    <option class="lang-pt">PARCERIA</option>
+                    <option class="lang-en">PARTNERSHIP</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message" class="lang-pt">Mensagem</label>
+                  <label for="message" class="lang-en">Message</label>
+                  <textarea id="message" name="mensagem" rows="5" class="form-control" required></textarea>
+                </div>
+      
+                <!-- HIDDEN inputs do formsubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="">
+      
+                <button type="submit" class="btn lang-pt">Enviar Mensagem</button>
+                <button type="submit" class="btn lang-en">Send Message</button>
+              </form>
+      
+              <!-- mensagem de sucesso -->
+              <div class="success-message" id="successMessage" style="display:none; text-align:center; margin-top:15px; font-weight:bold; color:#075e54;">
+                <span class="lang-pt">✅ Sua mensagem foi enviada com sucesso!</span>
+                <span class="lang-en">✅ Your message has been sent successfully!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <script>
+        const form = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
+      
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+      
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(form)
+          }).then(() => {
+            form.reset(); // limpa os campos
+            successMessage.style.display = "block"; 
+      
+            // esconde a mensagem depois de 5s
+            setTimeout(() => {
+              successMessage.style.display = "none";
+            }, 5000);
+          }).catch(() => {
+            alert("❌ Ocorreu um erro. Tente novamente.");
+          });
+        });
+      </script>
+      
+      
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>TEJ HOLDING</h4>
+                    <p class="lang-pt">Um ecossistema financeiro completo oferecendo soluções inovadoras para pessoas e empresas em todo o mundo.</p>
+                    <p class="lang-en">A complete financial ecosystem offering innovative solutions for individuals and businesses worldwide.</p>
+                    <div class="social-links">
+                        <a href="mailto:support@tejholding.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                          </a>
+                          
+                          <a href="https://wa.me/17862553181" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                          </a>
+                          
+                          <a href="https://play.google.com/store/apps/details?id=com.tejbank.tej" target="_blank" class="social-link">
+                            <i class="fab fa-google-play"></i>
+                          </a>
+        
+                          <a href="https://play.google.com/store/apps/details?id=com.tejbank.tej" target="_blank" class="social-link">
+                            <i class="fab fa-apple"></i>
+                          </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-pt">Subsidiárias</h4>
+                    <h4 class="lang-en">Subsidiaries</h4>
+                    <ul>
+                        <li><a href="#">TEJ BANK</a></li>
+                        <li><a href="#">TEJ PAGUE</a></li>
+                        <li><a href="#">UNIVERSAL CAPITAL</a></li>
+                        <li><a href="#">CENTRAL DO IMIGRANTE</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-pt">Áreas de Atuação</h4>
+                    <h4 class="lang-en">Areas of Operation</h4>
+                    <ul>
+                        <li><a href="#" class="lang-pt">Consultoria & Jurídico</a><a href="#" class="lang-en">Consulting & Legal</a></li>
+                        <li><a href="#" class="lang-pt">Social e Sustentabilidade</a><a href="#" class="lang-en">Social and Sustainability</a></li>
+                        <li><a href="#" class="lang-pt">Mercado de Capitais</a><a href="#" class="lang-en">Capital Markets</a></li>
+                        <li><a href="#" class="lang-pt">Blockchain & Criptomoeda</a><a href="#" class="lang-en">Blockchain & Cryptocurrency</a></li>
+                        <li><a href="#" class="lang-pt">Inteligência Artificial</a><a href="#" class="lang-en">Artificial Intelligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-pt">Áreas de Atuação</h4>
+                    <h4 class="lang-en">Areas of Operation</h4>
+                    <ul>
+                        <li><a href="#" class="lang-pt">Energia Renovável</a><a href="#" class="lang-en">Renewable Energy</a></li>
+                        <li><a href="#" class="lang-pt">Segurança Digital</a><a href="#" class="lang-en">Digital Security</a></li>
+                        <li><a href="#" class="lang-pt">TEJ Educação</a><a href="#" class="lang-en">TEJ Education</a></li>
+                        <li><a href="#" class="lang-pt">Instituto TEJ</a><a href="#" class="lang-en">TEJ Institute</a></li>
+                        <li><a href="#">NASDAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="lang-pt">Links Rápidos</h4>
+                    <h4 class="lang-en">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" class="lang-pt">Início</a><a href="#home" class="lang-en">Home</a></li>
+                        <li><a href="#about" class="lang-pt">Sobre Nós</a><a href="#about" class="lang-en">About Us</a></li>
+                        <li><a href="#services" class="lang-pt">Serviços</a><a href="#services" class="lang-en">Services</a></li>
+                        <li><a href="#subsidiaries" class="lang-pt">Subsidiárias</a><a href="#subsidiaries" class="lang-en">Subsidiaries</a></li>
+                        <li><a href="#contact" class="lang-pt">Contato</a><a href="#contact" class="lang-en">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TEJ HOLDING LLC. <span class="lang-pt">Todos os direitos reservados.</span><span class="lang-en">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu hamburger para dispositivos móveis
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Fechar menu ao clicar em um link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Animação suave ao rolar
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Funcionalidade do dropdown dos serviços
+            const serviceHeaders = document.querySelectorAll('.service-header');
+            
+            serviceHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const arrow = this.querySelector('.service-arrow');
+                    
+                    // Fecha todos os outros conteúdos
+                    document.querySelectorAll('.service-content').forEach(item => {
+                        if (item !== content) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Reseta todas as outras setas
+                    document.querySelectorAll('.service-arrow').forEach(item => {
+                        if (item !== arrow) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Alterna o conteúdo atual
+                    content.classList.toggle('active');
+                    arrow.classList.toggle('active');
+                });
+            });
+
+            // Alternador de idiomas - CORRIGIDO
+            const languageFlags = document.querySelectorAll('.language-flag');
+            
+            languageFlags.forEach(flag => {
+                flag.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Remove a classe active de todas as bandeiras
+                    languageFlags.forEach(f => f.classList.remove('active'));
+                    
+                    // Adiciona a classe active à bandeira clicada
+                    this.classList.add('active');
+                    
+                    // Alterna a classe no body para controlar a exibição dos textos
+                    if (lang === 'en') {
+                        document.body.classList.add('english');
+                    } else {
+                        document.body.classList.remove('english');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
